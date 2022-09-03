@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body{
+      margin: 0;
+      padding: 0;
+      font-family: montserrat;
+      background: linear-gradient(120deg,#2980b9,#8e44ad);
+      height: 100vh;
+      overflow: hidden;
+    }
+    .center h1{
+      text-align: center;
+      padding:0 0 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="center">
+    <h1>RESULTS</h1>
+    <h2>Specified Speed limit - {{s}} km/hr</h2>
+    <h2>The list of OverSpeeded Car Number Plates </h2>
+    <ul>
+      {% if not list %}
+        <li>{{"No Such Cars"}}</li>
+      {% endif %}
+      {% for plate in list %}
+        <li>{{plate.upper()}}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</body>
+</html>
